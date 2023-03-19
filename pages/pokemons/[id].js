@@ -9,7 +9,7 @@ const Details = ({pokeman,styles}) => {
             <div className='mt-20 flex-1 ml-40'>
                 <img src={pokeman.image.hires} alt=''></img>
             </div>
-            <div className='flex-1 mt-8 mr-20'>
+            <div className='flex-1 mt-8 mr-20 text-light-black'>
                 <p className="text-3xl font-semibold"> 
                     <span className='mr-4'>
                         #{pokeman.id}

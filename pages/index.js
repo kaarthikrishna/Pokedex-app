@@ -61,35 +61,41 @@ export default function Home({styles,pokedata}) {
   }
   return (
     <Layout title={"POKEDEX"}>
-      <div className='flex justify-center mt-12'>
-        <input type="text" placeholder='search' className='searchbox sm:w-3/4' onChange={handleInputChange} value={input}></input>
+      <div className='mt-12 searchbox'>
+        <input type="text" placeholder='search' className='bg-transparent focus:outline-0 search sm:w-3/4 ' onChange={handleInputChange} value={input}></input>
       </div>
       <div className='flex justify-center sm:px-10 py-4 items-center'>
-        <select name='types' id='types' defaultValue={"All"} className="searchbox sm:p-2.5 border-none" onChange={handleFilterChange} value={filter}>
-        <option value="All" >
-              All
-            </option>
-            <option value="Normal">Normal</option>
-            <option value="Fire">Fire</option>
-            <option value="Water">Water</option>
-            <option value="Electric">Electric</option>
-            <option value="Grass">Grass</option>
-            <option value="Ice">Ice</option>
-            <option value="Fighting">Fighting</option>
-            <option value="Poison">Poison</option>
-            <option value="Ground">Ground</option>
-            <option value="Flying">Flying</option>
-            <option value="Psychic">Psychic</option>
-            <option value="Bug">Bug</option>
-            <option value="Rock">Rock</option>
-            <option value="Ghost">Ghost</option>
-            <option value="Dragon">Dragon</option>
-            <option value="Dark">Dark</option>
-            <option value="Steel">Steel</option>
-            <option value="Fairy">Fairy</option>
-        </select>
+        
+        <div class="inline-flex border-none mt-10" role="group">
+          <button className='filter font-medium text-sm px-4 py-3 mr-2 text-gray-900 focus:ring focus:ring-violet-300' onClick={handleFilterChange} value="Normal">Normal</button>
+          <button className='filter font-medium text-sm px-6 py-3 mr-2 text-gray-900 focus:ring focus:ring-violet-300' onClick={handleFilterChange} value="Fire">Fire</button>
+          <button className='filter font-medium text-sm px-4  py-3 mr-2 text-gray-900 focus:ring focus:ring-violet-300'onClick={handleFilterChange} value="Water">Water</button>
+          <button className='filter font-medium text-sm px-4 py-3 mr-2 text-gray-900 focus:ring focus:ring-violet-300'onClick={handleFilterChange} value="Electric">Electric</button>
+          <button className='filter font-medium text-sm px-4 py-1 mr-2 text-gray-900 focus:ring focus:ring-violet-300'onClick={handleFilterChange} value="Grass">Grass</button>
+          <button className='filter font-medium text-sm px-7 py-1 mr-2 text-gray-900 focus:ring focus:ring-violet-300'onClick={handleFilterChange} value="Ice">Ice</button>
+          <button className='filter font-medium text-sm px-4 py-1 mr-2 text-gray-900 focus:ring focus:ring-violet-300'onClick={handleFilterChange} value="Fighting">Fighting</button>
+          <button className='filter font-medium text-sm px-4 py-1 mr-2 text-gray-900 focus:ring focus:ring-violet-300'onClick={handleFilterChange} value="Poison">Poison</button>
+          <button className='filter font-medium text-sm px-4 py-1 mr-2 text-gray-900 focus:ring focus:ring-violet-300'onClick={handleFilterChange} value="Ground">Ground</button>
+          <button className='filter font-medium text-sm px-4 py-1 mr-2 text-gray-900 focus:ring focus:ring-violet-300'onClick={handleFilterChange} value="Flying">Flying</button>
+          <button className='filter font-medium text-sm px-4 py-1 mr-2 text-gray-900 focus:ring focus:ring-violet-300'onClick={handleFilterChange} value="Psychic">Psychic</button>
+          <button className='filter font-medium text-sm px-7 py-1 mr-2 text-gray-900 focus:ring focus:ring-violet-300'onClick={handleFilterChange} value="Bug">Bug</button>
+          <button className='filter font-medium text-sm px-4 py-1 mr-2 text-gray-900 focus:ring focus:ring-violet-300'onClick={handleFilterChange} value="Rock">Rock</button>
+          <button className='filter font-medium text-sm px-4 py-1 mr-2 text-gray-900 focus:ring focus:ring-violet-300'onClick={handleFilterChange} value="Ghost">Ghost</button>
+          <button className='filter font-medium text-sm px-4 py-1 mr-2 text-gray-900 focus:ring focus:ring-violet-300'onClick={handleFilterChange} value="Dragon">Dragon</button>
+          <button className='filter font-medium text-sm px-4 py-1 mr-2 text-gray-900 focus:ring focus:ring-violet-300'onClick={handleFilterChange} value="Dark">Dark</button>
+          <button className='filter font-medium text-sm px-4 py-1 mr-2 text-gray-900 focus:ring focus:ring-violet-300'onClick={handleFilterChange} value="Steel">Steel</button>
+          <button className='filter font-medium text-sm px-4 py-1 mr-2 text-gray-900 focus:ring focus:ring-violet-300'onClick={handleFilterChange} value="Fairy">Fairy</button>
+        </div>
+
+
       </div>
-      <div className='flex flex-wrap justify-center mx-auto mt-20'>
+      
+      <div className='flex justify-center sm:px-10  items-center'>
+      <button className='filter  font-medium text-sm px-10 py-3 mr-2 text-gray-900 focus:ring focus:ring-violet-300' onClick={handleFilterChange} value="All">All</button>
+
+      </div>
+
+      <div className='flex flex-wrap justify-center mx-auto mt-10'>
         {
           pokeArr.map((pokeman,i)=>{
             return(
@@ -123,8 +129,8 @@ export default function Home({styles,pokedata}) {
           })
         }
       </div>
-      <div className='container mx-auto flex flex-wrap justify-between pb-8 '>
-        <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded disabled:bg-gray-500' onClick={handlePrev} disabled={pageno===0?true:false}>Previous</button><button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded disabled:bg-gray-500' onClick={handleNext} disabled={searchresults.length/20-pageno<1?true:false  }>Next</button>
+      <div className='pagination pb-8 '>
+        <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 butt rounded disabled:bg-gray-500' onClick={handlePrev} disabled={pageno===0?true:false}>Previous</button><button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded disabled:bg-gray-500' onClick={handleNext} disabled={searchresults.length/20-pageno<1?true:false  }>Next</button>
       </div>
     </Layout>
   )

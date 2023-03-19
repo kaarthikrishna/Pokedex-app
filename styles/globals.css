@@ -21,9 +21,36 @@ html{
     transform: scale(1.1);
 }
 .searchbox{
+    
+
     width: 40rem;
     border-radius: 1.5rem;
     box-shadow: inset 5px 5px 12px #ffff,
                  5px 5px 12px rgba(0,0,0,.16);
     height: 3rem;
+margin: auto;
+margin-top: 3rem;
+}
+.search{
+    margin-left: 1rem;
+margin-top: 0.8rem;
+
+
+
+}
+.filter{
+    border-radius: 1.5rem;
+    box-shadow: inset 5px 5px 12px #ffff,
+                 5px 5px 12px rgba(0,0,0,.16);
+transition: .3s;
+}
+.filter:hover{
+transform: scale(1.2);
+}
+.pagination{
+    margin: auto;
+  width: 30%;
+}
+.butt{
+margin-right: 17rem;
 }
