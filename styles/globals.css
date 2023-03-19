@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+html{
+    background: #ecf0f3;
+    font-family:'poppins',sans-serif
+}
+.pokebox{
+    background-color: #ecf0f3;
+    position: relative;
+    border-radius: 1.5rem;
+    box-shadow: inset 5px 5px 12px #ffff,
+                 5px 5px 12px rgba(0,0,0,.16);
+    transition: .3s;
+    margin-bottom: 3rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+.pokebox:hover{
+    transform: scale(1.1);
+}
+.searchbox{
+    width: 40rem;
+    border-radius: 1.5rem;
+    box-shadow: inset 5px 5px 12px #ffff,
+                 5px 5px 12px rgba(0,0,0,.16);
+    height: 3rem;
+}
