@@ -130,7 +130,7 @@ export default function Home({styles,pokedata}) {
         }
       </div>
       <div className='pagination pb-8 '>
-        <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 butt rounded disabled:bg-gray-500' onClick={handlePrev} disabled={pageno===0?true:false}>Previous</button><button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded disabled:bg-gray-500' onClick={handleNext} disabled={searchresults.length/20-pageno<1?true:false  }>Next</button>
+        <button className='bg-#037ffc hover:bg-blue-700 text-white font-bold py-2 px-4 butt rounded disabled:bg-gray-500' onClick={handlePrev} disabled={pageno===0?true:false}>Previous</button><button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded disabled:bg-gray-500' onClick={handleNext} disabled={searchresults.length/20-pageno<1?true:false  }>Next</button>
       </div>
     </Layout>
   )
